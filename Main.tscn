@@ -35,4 +35,4 @@ position = Vector2( 128, 64 )
 position = Vector2( 64, 64 )
 
 [node name="Laser" parent="." instance=ExtResource( 3 )]
-position = Vector2( 224, 320 )
+position = Vector2( 96, 320 )

@@ -3,13 +3,8 @@ extends RayCast2D
 var is_casting = false setget set_is_casting
 
 func _ready():
-	set_physics_process(false)
-	$Line2D.points[1] = Vector2.ZERO
-
-func _unhandled_input(event):
-	if event is InputEventMouseButton:
-		self.is_casting = event.pressed # using self. calls setget of is_casting, setget doesn't get activate if its called globally
-
+	self.is_casting = true
+	
 func _physics_process(_delta):
 	var cast_point = cast_to # cast_to is the raycast2d's destination point
 	force_raycast_update() #updates raycast before checking collisions
