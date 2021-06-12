@@ -1,38 +1,130 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://EnemySpawner.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Laser.tscn" type="PackedScene" id=3]
+[ext_resource path="res://LinkTower.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sheet.png" type="Texture" id=4]
+[ext_resource path="res://music.mp3" type="AudioStream" id=5]
+
+[sub_resource type="TileSet" id=1]
+3/name = "sheet.png 3"
+3/texture = ExtResource( 4 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 96, 112 )
+3/tile_mode = 2
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 16, 16 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape_one_way = false
+3/shape_one_way_margin = 0.0
+3/shapes = [  ]
+3/z_index = 0
+4/name = "sheet.png 4"
+4/texture = ExtResource( 4 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 96, 0, 112, 112 )
+4/tile_mode = 2
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 16, 16 )
+4/autotile/spacing = 0
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape_one_way = false
+4/shape_one_way_margin = 0.0
+4/shapes = [  ]
+4/z_index = 0
+5/name = "sheet.png 5"
+5/texture = ExtResource( 4 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 112, 240, 96 )
+5/tile_mode = 2
+5/autotile/icon_coordinate = Vector2( 0, 0 )
+5/autotile/tile_size = Vector2( 16, 16 )
+5/autotile/spacing = 0
+5/autotile/occluder_map = [  ]
+5/autotile/navpoly_map = [  ]
+5/autotile/priority_map = [  ]
+5/autotile/z_index_map = [  ]
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape_one_way = false
+5/shape_one_way_margin = 0.0
+5/shapes = [  ]
+5/z_index = 0
 
 [node name="Main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131071, 3, 65537, -131070, 3, 65537, -131069, 3, 65537, -65536, 3, 65537, -65535, 3, 65537, -65534, 3, 65537, -65533, 3, 65537, -65532, 3, 65537, -65531, 3, 65537, -65530, 3, 65537, -65529, 3, 65537, -65528, 3, 65537, -65527, 3, 65537, -65526, 3, 65537, -65525, 3, 65537, -65524, 3, 65537, -65523, 3, 65537, -65522, 3, 65537, -65521, 3, 65537, -65520, 3, 65537, -65519, 3, 65537, -65518, 3, 65537, -65517, 3, 65537, -65516, 3, 65537, 0, 3, 65537, 1, 3, 65537, 2, 3, 65537, 3, 3, 65537, 4, 3, 65537, 5, 3, 327682, 6, 3, 327683, 7, 3, 65537, 8, 3, 65537, 9, 3, 65537, 10, 5, 5, 11, 3, 65537, 12, 3, 65537, 13, 3, 65537, 14, 5, 3, 15, 5, 4, 16, 3, 65537, 17, 3, 65537, 18, 3, 65537, 19, 3, 65537, 20, 3, 65537, 65536, 3, 65537, 65537, 3, 65537, 65538, 3, 3, 65539, 3, 196609, 65540, 3, 196609, 65541, 3, 393218, 65542, 3, 393219, 65543, 3, 196608, 65544, 3, 196608, 65545, 3, 196608, 65546, 5, 65538, 65547, 5, 196620, 65548, 3, 196608, 65549, 3, 196610, 65550, 5, 65539, 65551, 5, 65540, 65552, 3, 196608, 65553, 3, 4, 65554, 3, 65537, 65555, 3, 65537, 65556, 3, 65537, 131072, 3, 65537, 131073, 3, 65537, 131074, 3, 393216, 131075, 4, 1, 131076, 4, 131074, 131077, 4, 131074, 131078, 4, 131074, 131079, 4, 131075, 131080, 4, 131075, 131081, 4, 131075, 131082, 4, 131075, 131083, 4, 393220, 131084, 4, 131075, 131085, 4, 131075, 131086, 4, 65540, 131087, 4, 65540, 131088, 4, 65540, 131089, 3, 262145, 131090, 3, 65537, 131091, 3, 65537, 131092, 3, 65537, 196608, 3, 65537, 196609, 3, 65537, 196610, 3, 393216, 196611, 4, 65538, 196612, 4, 131074, 196613, 4, 131074, 196614, 4, 131074, 196615, 4, 131075, 196616, 4, 65540, 196617, 4, 65540, 196618, 4, 131074, 196619, 4, 393218, 196620, 4, 262145, 196621, 4, 262145, 196622, 4, 262145, 196623, 4, 327681, 196624, 4, 65540, 196625, 3, 262145, 196626, 3, 65537, 196627, 3, 65537, 196628, 3, 65537, 262144, 3, 65537, 262145, 3, 65537, 262146, 5, 131084, 262147, 4, 262146, 262148, 4, 262145, 262149, 4, 262145, 262150, 4, 262145, 262151, 4, 262145, 262152, 4, 262147, 262153, 4, 131073, 262154, 4, 131073, 262155, 4, 393220, 262156, 3, 0, 262157, 3, 1, 262158, 3, 2, 262159, 4, 393220, 262160, 4, 5, 262161, 3, 262145, 262162, 3, 65537, 262163, 3, 65537, 262164, 3, 65537, 327680, 3, 65537, 327681, 3, 65537, 327682, 3, 393216, 327683, 4, 131075, 327684, 4, 131074, 327685, 4, 131074, 327686, 4, 131074, 327687, 4, 131075, 327688, 4, 131075, 327689, 4, 131073, 327690, 4, 131073, 327691, 4, 393220, 327692, 3, 65536, 327693, 3, 327685, 327694, 3, 65538, 327695, 4, 393220, 327696, 4, 5, 327697, 3, 262145, 327698, 3, 65537, 327699, 3, 65537, 327700, 3, 65537, 393216, 3, 65537, 393217, 3, 65537, 393218, 3, 393216, 393219, 4, 131075, 393220, 4, 131074, 393221, 4, 131074, 393222, 4, 131075, 393223, 4, 131075, 393224, 4, 131075, 393225, 4, 131073, 393226, 4, 131073, 393227, 4, 393220, 393228, 3, 131072, 393229, 3, 131073, 393230, 3, 131074, 393231, 4, 393220, 393232, 4, 5, 393233, 3, 262145, 393234, 3, 65537, 393235, 3, 65537, 393236, 3, 65537, 458752, 3, 65537, 458753, 3, 65537, 458754, 3, 393216, 458755, 4, 131075, 458756, 4, 65540, 458757, 4, 262144, 458758, 4, 262145, 458759, 4, 262145, 458760, 4, 262145, 458761, 4, 262145, 458762, 4, 262145, 458763, 4, 393219, 458764, 4, 327682, 458765, 4, 262145, 458766, 4, 262146, 458767, 4, 393217, 458768, 4, 131075, 458769, 3, 262145, 458770, 3, 65537, 458771, 3, 65537, 458772, 3, 65537, 524288, 3, 65537, 524289, 3, 65537, 524290, 3, 393216, 524291, 4, 65537, 524292, 4, 0, 524293, 4, 196608, 524294, 4, 0, 524295, 4, 196610, 524296, 4, 131075, 524297, 4, 131074, 524298, 4, 131074, 524299, 4, 131074, 524300, 5, 10, 524301, 4, 65540, 524302, 4, 65540, 524303, 4, 65540, 524304, 4, 131075, 524305, 3, 262145, 524306, 3, 65537, 524307, 3, 65537, 524308, 3, 65537, 589824, 3, 65537, 589825, 3, 65537, 589826, 3, 393216, 589827, 4, 196611, 589828, 4, 196610, 589829, 4, 0, 589830, 4, 196609, 589831, 4, 5, 589832, 4, 196612, 589833, 4, 131074, 589834, 4, 131077, 589835, 4, 131074, 589836, 4, 65538, 589837, 4, 65540, 589838, 4, 65540, 589839, 4, 131075, 589840, 4, 131075, 589841, 3, 262145, 589842, 3, 65537, 589843, 3, 65537, 589844, 3, 65537, 655360, 3, 65537, 655361, 3, 65537, 655362, 3, 393216, 655363, 4, 65537, 655364, 4, 0, 655365, 4, 196611, 655366, 4, 6, 655367, 4, 131072, 655368, 4, 131077, 655369, 4, 131077, 655370, 4, 131075, 655371, 4, 131075, 655372, 4, 131075, 655373, 4, 131075, 655374, 4, 131075, 655375, 4, 131075, 655376, 4, 131075, 655377, 3, 262145, 655378, 3, 65537, 655379, 3, 65537, 655380, 3, 65537, 720896, 3, 65537, 720897, 3, 65537, 720898, 3, 65539, 720899, 3, 262147, 720900, 3, 262147, 720901, 3, 262147, 720902, 5, 6, 720903, 3, 262147, 720904, 3, 262147, 720905, 3, 262147, 720906, 3, 262147, 720907, 3, 262147, 720908, 3, 131077, 720909, 3, 262147, 720910, 5, 6, 720911, 3, 262147, 720912, 3, 262147, 720913, 3, 65540, 720914, 3, 65537, 720915, 3, 65537, 720916, 3, 65537, 786432, 3, 65537, 786433, 3, 65537, 786434, 3, 65537, 786435, 3, 65537, 786436, 3, 65537, 786437, 3, 65537, 786438, 5, 65542, 786439, 3, 65537, 786440, 3, 65537, 786441, 3, 65537, 786442, 3, 65537, 786443, 3, 65537, 786444, 3, 196613, 786445, 3, 65537, 786446, 5, 65542, 786447, 3, 65537, 786448, 3, 65537, 786449, 3, 65537, 786450, 3, 65537, 786451, 3, 65537, 786452, 3, 65537 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Waypoints" type="Node2D" parent="."]
 
 [node name="Waypoint" type="Node2D" parent="Waypoints"]
-position = Vector2( 320, 64 )
+position = Vector2( 96, 48 )
 
 [node name="Waypoint2" type="Node2D" parent="Waypoints"]
-position = Vector2( 320, 256 )
+position = Vector2( 160, 48 )
 
 [node name="Waypoint3" type="Node2D" parent="Waypoints"]
-position = Vector2( 608, 256 )
+position = Vector2( 160, 96 )
 
 [node name="Waypoint4" type="Node2D" parent="Waypoints"]
-position = Vector2( 608, 64 )
+position = Vector2( 64, 96 )
 
 [node name="Waypoint5" type="Node2D" parent="Waypoints"]
-position = Vector2( 896, 64 )
+position = Vector2( 64, 160 )
 
 [node name="Waypoint6" type="Node2D" parent="Waypoints"]
-position = Vector2( 896, 512 )
+position = Vector2( 264, 160 )
 
 [node name="Waypoint7" type="Node2D" parent="Waypoints"]
-position = Vector2( 128, 512 )
+position = Vector2( 264, 40 )
 
 [node name="Waypoint8" type="Node2D" parent="Waypoints"]
-position = Vector2( 128, 64 )
+position = Vector2( 240, 40 )
+
+[node name="Waypoint9" type="Node2D" parent="Waypoints"]
+position = Vector2( 240, 24 )
 
 [node name="EnemySpawner" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64, 64 )
+position = Vector2( 96, 24 )
 
-[node name="Laser" parent="." instance=ExtResource( 3 )]
-position = Vector2( 96, 320 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+[node name="LinkTower" parent="." instance=ExtResource( 3 )]
+position = Vector2( 16, 32 )
+
+[node name="LinkTower2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 288, 120 )
+
+[node name="LinkTower3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 24, 192 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true

@@ -9,5 +9,5 @@ func _ready():
 
 func _on_InnerSpawner_timeout():
 	var enemy_instance = enemy.instance()
-	enemy_instance.position = global_position
+	enemy_instance.position = Vector2.ZERO
 	add_child(enemy_instance)
